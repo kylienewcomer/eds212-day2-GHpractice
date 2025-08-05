@@ -7,9 +7,9 @@ editor: visual
 library(palmerpenguins)
 library(ARTofR)
 library(tidyverse)
-install.packages("pacman")
+#install.packages("pacman")
 library("pacman")
-install.packages("wesanderson")
+#install.packages("wesanderson")
 library(wesanderson)
 ```
 
