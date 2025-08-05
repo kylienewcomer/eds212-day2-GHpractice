@@ -1,0 +1,54 @@
+---
+title: "day2b-exercises"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(wesanderson)
+library(knitr)
+
+```
+```{r}
+eq1 <- function(x){
+  3 * x^2 + 4
+  
+}
+
+my_data_range <- data.frame(x = c(1, 100))
+```
+
+```{r}
+ggplot(data = my_data_range, aes(x = x)) +
+  geom_function(fun = eq1)
+
+
+```
+
+```{r}
+ct <- function(t){
+  t^3
+}
+
+my_data <- data.frame(t = c(-5, 5))
+
+ggplot(my_data, aes(x = t)) +
+  geom_function(fun = ct)
+```
+```{r}
+dc_dt <- D(expr = expression(t^3), name = "t")
+dc_dt
+
+dc_dt_fun <- function(t){
+  3 * t^2
+  
+}
+```
+```{r}
+ggplot(my_data, aes(x = t)) +
+  geom_function(fun = ct, color = "purple") +
+  geom_function(fun = dc_dt_fun, color = "cyan4")
+
+```
+
