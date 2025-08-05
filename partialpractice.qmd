@@ -52,3 +52,12 @@ ggplot(my_data, aes(x = t)) +
 
 ```
 
+```{r}
+f_xyz <- expression(2 * x * y - 3 * x^2 * z^3)
+
+df_dx <- D(expr = f_xyz, name = "x")
+
+df_dx
+
+```
+
