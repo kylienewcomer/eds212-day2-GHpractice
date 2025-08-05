@@ -7,18 +7,24 @@ editor: visual
 library(palmerpenguins)
 library(ARTofR)
 library(tidyverse)
+install.packages("pacman")
+library("pacman")
+install.packages("wesanderson")
+library(wesanderson)
 ```
+
+
 ```{r}
 ggplot(data = penguins, 
        aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species)) +
-  scale_color_manual(values = c("darkorange","darkblue","cyan4")) +
+  scale_color_manual(values = wes_palette("BottleRocket2")) +
   labs(x = "Body mass (g)",
        y = "Flipper length (mm)",
        title = "Palmer penguin size measurements",
        subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
        caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
-  facet_wrap(~island) +
+  facet_wrap(~island, nrow(3)) +
   theme_minimal()
 ```
 
